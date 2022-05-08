@@ -2,10 +2,14 @@
 
 export default class PainelController {
     async index(){
-        return 'Index Painel'
+        return {response: 'Index Painel'}
     }
 
     async usuarios(){
-        return'Users Painel'
+        return {response: 'Users Painel'}
+    }
+
+    async admin(){
+        return {response: 'Admin Painel'}
     }
 }

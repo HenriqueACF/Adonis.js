@@ -6,8 +6,14 @@ Route.group(()=>{
     Route.get('/admin', 'PainelController.admin')
 
     Route.group(()=>{
+
         Route.get('/', 'PainelController.index')
-        Route.get('/usuarios', 'PainelController.usuarios')
+        Route.get('/users', 'PainelController.usuarios')
+        Route.get('/users/:id', 'PainelController.usuarioById')
+            .where('id', Route.matchers.number())
+        Route.get('/users/:slug', 'PainelController.usuarioBySlug')
+            .where('slug', Route.matchers.slug())
+
     }).prefix('/painel')
 
 

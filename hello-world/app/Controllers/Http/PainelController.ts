@@ -16,8 +16,25 @@ export default class PainelController {
     async index({request}){
         return {
             response: 'Index Painel',
-            qs: request.qs()//QUERY STRING
+            qs: request.qs(),//QUERY STRING
+            url: request.url(),// retorna a url
+            completeUrl: request.completeUrl(),// retorna a url inteira
+            input: request.all(), // RETORNA TODOS OS INPUTS
+            only: request.only(['idade']), //RETORNA APENAS O REQUEST DE IDADE
+            execpt: request.execpt(['idade']), //RETORNA TUDO MENOS UM ESPECIFICO
+            ip: request.ip(),// retorna o ip local
+            ips: request.ips(),//RETORNA UM ARRAY DE POSSIVEIS IPS
+            language: request.language(), //LINGUAGENS PREFERIDAS DO NAVEGADOR
+            method: request.method(), //RETORNA O METODO DAQUELA REQUSIÇÃO
+            headers: request.headers(), // RETORNA OS HEADERS DAQUELA REQUISIÇÃO
         }
+    }
+
+    async response ({response}){
+        let json = {hello: 'world'}
+        response.status(404), //RETORNA UM STATUS HTTP
+        response.redirect().toPath('/api/painel/users/1'), // REDIRECIONA PARA UMA ROTA ESPECIFICA
+        response.download(), //FORÇA O NAVEGADOR PARA BAIXAR O CONTEUDO DAQUELA PAGINA
     }
 
     async usuarioById({params}){

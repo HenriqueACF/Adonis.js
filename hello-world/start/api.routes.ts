@@ -8,6 +8,7 @@ Route.group(()=>{
     Route.group(()=>{
 
         Route.get('/', 'PainelController.index')
+        Route.get('/response', 'PainelController.response')
 
         Route.get('/users/:id?', 'PainelController.usuarioById')
             .where('id', Route.matchers.number())

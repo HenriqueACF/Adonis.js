@@ -13,8 +13,11 @@ export default class PainelController {
         slug:'riq'
     }]
 
-    async index(){
-        return {response: 'Index Painel'}
+    async index({request}){
+        return {
+            response: 'Index Painel',
+            qs: request.qs()//QUERY STRING
+        }
     }
 
     async usuarioById({params}){

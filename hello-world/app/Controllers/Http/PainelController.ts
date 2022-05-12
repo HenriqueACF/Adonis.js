@@ -34,7 +34,7 @@ export default class PainelController {
         let json = {hello: 'world'}
         response.status(404), //RETORNA UM STATUS HTTP
         response.redirect().toPath('/api/painel/users/1'), // REDIRECIONA PARA UMA ROTA ESPECIFICA
-        response.download(), //FORÇA O NAVEGADOR PARA BAIXAR O CONTEUDO DAQUELA PAGINA
+        response.download() //FORÇA O NAVEGADOR PARA BAIXAR O CONTEUDO DAQUELA PAGINA
     }
 
     async usuarioById({params}){

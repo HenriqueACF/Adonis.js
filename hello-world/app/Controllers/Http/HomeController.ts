@@ -2,7 +2,10 @@
 
 export default class HomeController {
     async index({view}){
-        return view.render('welcome')
+        return view.render('painel.homepage', {
+            usuario: 'Henrique Assis',
+            idade: 24
+        })
     }
 
     async about(){

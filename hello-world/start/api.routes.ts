@@ -8,11 +8,12 @@ Route.group(()=>{
     Route.group(()=>{
 
         Route.get('/', 'PainelController.index')
-        Route.get('/users', 'PainelController.usuarios')
-        Route.get('/users/:id', 'PainelController.usuarioById')
+
+        Route.get('/users/:id?', 'PainelController.usuarioById')
             .where('id', Route.matchers.number())
         Route.get('/users/:slug', 'PainelController.usuarioBySlug')
             .where('slug', Route.matchers.slug())
+        Route.get('/docs/*', 'PainelController.docs')
 
     }).prefix('/painel')
 

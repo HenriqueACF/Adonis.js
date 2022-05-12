@@ -17,15 +17,12 @@ export default class PainelController {
         return {response: 'Index Painel'}
     }
 
-    async usuarios(){
-        return {
-            user: this.users
-        }
-    }
-
     async usuarioById({params}){
+        if(!params['id']){
+            return {users: this.users}
+        }
         let myRequestUserId = params['id']
-       let myUser = this.users.find(user => user.id == myRequestUserId)
+        let myUser = this.users.find(user => user.id == myRequestUserId)
 
         if(myUser){
             return myUser
@@ -43,6 +40,10 @@ export default class PainelController {
         }else {
             return {error: 'Nenhum usuario encontrado'}
         }
+    }
+
+    async docs({params}){
+        return params['*'][0]
     }
 
     async admin(){

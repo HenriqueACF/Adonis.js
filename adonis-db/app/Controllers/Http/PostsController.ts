@@ -36,7 +36,7 @@ export default class PostsController {
     await myPost.delete()
   }
 
-  async update ({request, params, response}: HttpContextContract){
+  async destroy ({request, params, response}: HttpContextContract){
     const { id} = params
     const myPost = await Post.find(id)
 

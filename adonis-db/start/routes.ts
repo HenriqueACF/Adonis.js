@@ -24,8 +24,10 @@ Route.get('/', async () => {
   return { hello: 'world' }
 })
 
-Route.get('/posts', 'PostsController.index')
-Route.post('/posts', 'PostsController.store')
-Route.get('/postsId/:id', 'PostsController.show')
-Route.delete('/postsId/:id', 'PostsController.delete')
-Route.put('/updatePosts/:id', 'PostsController.update')
+Route.resource('/posts', 'PostsController').apiOnly()
+
+// Route.get('/posts', 'PostsController.index')
+// Route.post('/posts', 'PostsController.store')
+// Route.get('/postsId/:id', 'PostsController.show')
+// Route.delete('/postsId/:id', 'PostsController.delete')
+// Route.put('/updatePosts/:id', 'PostsController.update')

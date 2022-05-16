@@ -5,8 +5,8 @@ export default class UserSeederSeeder extends BaseSeeder {
   public async run () {
     // Write your database queries inside the run method
     await User.create({
-      email:'henrique@testeAdonis.com',
-      password:'adonis123'
+      email: "henrique@testeAdonis.com",
+      password:"adonis123"
     })
   }
 }

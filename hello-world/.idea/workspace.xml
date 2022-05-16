@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ae4d3e15-fdb3-4dac-95b6-7e067b8b5ca3" name="Changes" comment="init views">
+      <change afterPath="$PROJECT_DIR$/../adonis-db/.adonisrc.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../adonis-db/.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../adonis-db/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../adonis-db/ace" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../adonis-db/app/Exceptions/Handler.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../adonis-db/commands/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../adonis-db/env.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../adonis-db/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../adonis-db/providers/AppProvider.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../adonis-db/server.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../adonis-db/start/kernel.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../adonis-db/start/routes.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../adonis-db/tsconfig.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="5" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2940bbgZRMNcAgnMSk3iy3TaXdO" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/h3nriqueassis/Henrique/Github - Projects/Adonis/adonis-db",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/painel" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ae4d3e15-fdb3-4dac-95b6-7e067b8b5ca3" name="Changes" comment="" />
+      <created>1652357122569</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1652357122569</updated>
+      <workItem from="1652357123869" duration="6518000" />
+      <workItem from="1652446863485" duration="1009000" />
+    </task>
+    <task id="LOCAL-00001" summary="parametros opcionais e coringas">
+      <created>1652360049856</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1652360049856</updated>
+    </task>
+    <task id="LOCAL-00002" summary="query string">
+      <created>1652360376863</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1652360376863</updated>
+    </task>
+    <task id="LOCAL-00003" summary="request e response">
+      <created>1652361794749</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1652361794749</updated>
+    </task>
+    <task id="LOCAL-00004" summary="init views">
+      <created>1652381754964</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1652381754964</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="parametros opcionais e coringas" />
+    <MESSAGE value="query string" />
+    <MESSAGE value="request e response" />
+    <MESSAGE value="init views" />
+    <option name="LAST_COMMIT_MESSAGE" value="init views" />
+  </component>
+</project>

@@ -21,4 +21,5 @@
 import Route from '@ioc:Adonis/Core/Route'
 
 Route.post('/login', 'AuthController.login')
-Route.get('/logout', 'AuthController.logout')
+Route.get('/logout', 'AuthController.logout').middleware('auth')
+Route.get('/me', 'AuthController.me').middleware('auth')

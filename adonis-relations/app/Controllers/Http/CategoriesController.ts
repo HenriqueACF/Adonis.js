@@ -1,25 +1,72 @@
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+import Categorie from 'App/Models/Categorie'
 
 export default class CategoriesController {
 
   //exbibe todas as categorias
   public async index({}: HttpContextContract) {
-
+    const categories = await Categorie.all()
+    return categories
   }
 
   // public async create({}: HttpContextContract) {}
 
   //cria uma categoria
-  public async store({}: HttpContextContract) {}
+  public async store({request, auth}: HttpContextContract) {
+    const data = request.only(['title', 'color'])
+    const user = auth.user!
+
+    const newCategory = Categorie.create({...data, userId: user.id})
+
+    return newCategory
+  }
 
   //exibe informações de uma categoria
-  public async show({}: HttpContextContract) {}
+  public async show({request, response, auth}: HttpContextContract) {
+    const {id} = request.params()
+    const categorie = await Categorie.findOrFail(id)
+
+    if(categorie.userId != auth.user!.id){
+      return response.status(401).send('O usuario nao pode visualizar uma categoria que não lhe pertence')
+    }
+
+    await categorie.preload('user')
+    return categorie
+  }
 
   // public async edit({}: HttpContextContract) {}
 
   //atualiza uma categoria
-  public async update({}: HttpContextContract) {}
+  public async update({request, auth, response}: HttpContextContract) {
+    const {id} = request.params()
+    const data = request.only(['title', 'color'])
+    const categorie = await Categorie.findOrFail(id)
+
+    if(categorie.userId != auth.user!.id){
+      return response.status(401).send('O usuario nao pode editar uma categoria que não lhe pertence')
+    }
+
+    categorie.merge(data)
+    await categorie.save()
+    return categorie
+
+  }
 
   //deleta uma categoria
-  public async destroy({}: HttpContextContract) {}
+  public async destroy({params, auth, response}: HttpContextContract) {
+    const {id} = params
+    const myCategory = await Categorie.findOrFail(id)
+
+    // if(!myCategory){
+    //   return response.status(404).send('Categoria nao foi encontrada')
+    // }
+
+    if(myCategory.userId != auth.user!.id){
+      return response.status(401).send('O usuario nao pode deletar uma categoria que não lhe pertence')
+    }
+
+    await myCategory.delete()
+
+    return{success: true}
+  }
 }

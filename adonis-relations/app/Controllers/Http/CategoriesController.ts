@@ -1,11 +1,14 @@
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
-import Categorie from 'App/Models/Categorie'
+import Category from 'App/Models/Category'
 
 export default class CategoriesController {
 
   //exbibe todas as categorias
-  public async index({}: HttpContextContract) {
-    const categories = await Categorie.all()
+  public async index({auth}: HttpContextContract) {
+    const categories = await Category.query().where({
+      userId: auth.user!.id
+    }).preload('user')
+
     return categories
   }
 
@@ -16,7 +19,7 @@ export default class CategoriesController {
     const data = request.only(['title', 'color'])
     const user = auth.user!
 
-    const newCategory = Categorie.create({...data, userId: user.id})
+    const newCategory = Category.create({...data, userId: user.id})
 
     return newCategory
   }
@@ -24,7 +27,7 @@ export default class CategoriesController {
   //exibe informações de uma categoria
   public async show({request, response, auth}: HttpContextContract) {
     const {id} = request.params()
-    const categorie = await Categorie.findOrFail(id)
+    const categorie = await Category.findOrFail(id)
 
     if(categorie.userId != auth.user!.id){
       return response.status(401).send('O usuario nao pode visualizar uma categoria que não lhe pertence')
@@ -40,7 +43,7 @@ export default class CategoriesController {
   public async update({request, auth, response}: HttpContextContract) {
     const {id} = request.params()
     const data = request.only(['title', 'color'])
-    const categorie = await Categorie.findOrFail(id)
+    const categorie = await Category.findOrFail(id)
 
     if(categorie.userId != auth.user!.id){
       return response.status(401).send('O usuario nao pode editar uma categoria que não lhe pertence')
@@ -55,7 +58,7 @@ export default class CategoriesController {
   //deleta uma categoria
   public async destroy({params, auth, response}: HttpContextContract) {
     const {id} = params
-    const myCategory = await Categorie.findOrFail(id)
+    const myCategory = await Category.findOrFail(id)
 
     // if(!myCategory){
     //   return response.status(404).send('Categoria nao foi encontrada')

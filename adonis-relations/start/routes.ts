@@ -21,5 +21,14 @@
 import Route from '@ioc:Adonis/Core/Route'
 
 Route.post('/login', 'AuthController.login')
-Route.get('/logout', 'AuthController.logout').middleware('auth')
-Route.get('/me', 'AuthController.me').middleware('auth')
+
+//AGRUPAMENTO DE RODAS QUE PRECISAM DE AUTH
+Route.group(()=>{
+
+    Route.get('/logout', 'AuthController.logout')
+    Route.get('/me', 'AuthController.me')
+
+    Route.resource('categories', 'CategoriesController').apiOnly()
+    Route.resource('tasks', 'TasksController').apiOnly()
+
+}).middleware('auth')

@@ -12,3 +12,6 @@ Route.post('/enum/validateEnum', 'EnumsController.validateEnum')
 
 //NUMBER
 Route.post('/number', 'NumbersController.validateNumber')
+
+//BOOLEAN
+Route.post('/boolean', 'BooleansController.validateBoolean')

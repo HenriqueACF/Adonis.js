@@ -60,4 +60,23 @@ export default class StringsController {
 
     return { response: 'success'}
   }
+  public async validateStringWithEquals(ctx:HttpContextContract){
+    const {request} = ctx
+
+    const validationSchema = schema.create({
+      username: schema.string({}, [
+        rules.equalTo('Teste')
+      ]),
+
+      type: schema.string({}, [
+        rules.notIn(['ADMIN', 'TESTER'])
+      ])
+    })
+
+    await request.validate({
+      schema: validationSchema
+    })
+
+    return {success: true}
+  }
 }

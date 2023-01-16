@@ -9,3 +9,6 @@ Route.post('/string/equals', 'StringsController.validateStringWithEquals')
 
 //ENUM
 Route.post('/enum/validateEnum', 'EnumsController.validateEnum')
+
+//NUMBER
+Route.post('/number', 'NumbersController.validateNumber')

@@ -65,9 +65,10 @@ export default class StringsController {
 
     const validationSchema = schema.create({
       username: schema.string({}, [
+        // verifica se o user name é igual a henrique
         rules.equalTo('Teste')
       ]),
-
+      // verifica se o campo type nao é igual a determinado valor
       type: schema.string({}, [
         rules.notIn(['ADMIN', 'TESTER'])
       ])

@@ -15,3 +15,6 @@ Route.post('/number', 'NumbersController.validateNumber')
 
 //BOOLEAN
 Route.post('/boolean', 'BooleansController.validateBoolean')
+
+// DATE
+Route.post('/date', 'DateController.validateDate')

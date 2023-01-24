@@ -1,12 +1,14 @@
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import { schema } from '@ioc:Adonis/Core/Validator'
 
-export default class BooleansController {
-  public async validateBoolean(ctx:HttpContextContract){
+export default class DateController {
+  public async validateDate(ctx:HttpContextContract){
     const {request} = ctx
 
     const validationSchema = schema.create({
-      date: schema.boolean()
+      date: schema.date({
+        format:'dd-mm-yyyy'
+      })
     })
 
     await request.validate({
